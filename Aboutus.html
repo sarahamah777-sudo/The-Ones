@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us </title>
+    <link rel="stylesheet" href="style.css">
+
+         <style>
+
+/* GENERAL PAGE SETTINGS */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9ff;
+    color: #333;
+}
+
+
+/* HEADER */
+
+.about-header {
+    background: #036;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    box-shadow: 0 5px 20px rgba(0, 75, 180, 0.3);
+}
+
+.about-header h1 {
+    font-size: 48px;
+}
+
+.about-header p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
+/* MAIN CONTAINER */
+
+.about-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+
+/* ABOUT, VISION AND MISSION SECTIONS */
+
+.about-section {
+    background: white;
+    margin-bottom: 30px;
+    padding: 30px;
+
+    border-left: 6px solid #00aaff;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 100, 200, 0.08);
+
+    transition: 0.4s ease;
+}
+
+
+/* HOVER EFFECT */
+
+.about-section:hover {
+    transform: translateY(-5px);
+
+    border-left-color: #005bea;
+
+    box-shadow: 0 10px 30px rgba(0, 100, 255, 0.18);
+}
+
+
+/* SECTION HEADINGS */
+
+.about-section h2,
+.services-section h2 {
+    color: #0066cc;
+    font-size: 28px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+
+/* SECTION PARAGRAPHS */
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #555;
+    text-align: justify;
+}
+
+
+/* OUR SERVICES SECTION */
+
+.services-section {
+    margin-top: 50px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 25px rgba(0, 100, 200, 0.1);
+}
+
+
+/* SERVICES HEADING */
+
+.services-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+/* SERVICES GRID */
+
+.services-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* INDIVIDUAL SERVICE CARDS */
+
+.service-card {
+    background: linear-gradient(
+        135deg,
+        #007bff,
+        #00bfff
+    );
+
+    color: white;
+    padding: 25px 20px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
+
+    transition: all 0.4s ease;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* GLOWING HOVER EFFECT */
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+
+    background: linear-gradient(
+        135deg,
+        #005bea,
+        #00c6fb
+    );
+
+    box-shadow:
+        0 10px 25px rgba(0, 123, 255, 0.35),
+        0 0 15px rgba(0, 191, 255, 0.2);
+}
+
+
+/* SERVICE ICONS */
+
+.service-icon {
+    display: inline-block;
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+
+/* SERVICE TITLES */
+
+.service-card h3 {
+    font-size: 19px;
+    margin: 10px 0 15px;
+    color: white;
+}
+
+
+/* SERVICE DESCRIPTIONS */
+
+.service-card p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #f0faff;
+    margin-bottom: 5px;
+}
+
+  
+.back-home {
+     display: block;
+            text-align: center;
+            margin: 30px auto;
+        }
+
+
+/* FOOTER */
+
+.about-footer {
+    background: linear-gradient(
+        120deg,
+        #002b65,
+        #005bea
+    );
+
+    color: white; 
+    text-align: center;
+
+    padding: 15px;
+    margin-top: 10px;
+}
+
+.about-footer p {
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+
+/* TABLETS */
+
+@media screen and (max-width: 900px) {
+
+    .services-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-container {
+        padding: 15px;
+    }
+
+}
+
+
+/* MOBILE PHONES */
+
+@media screen and (max-width: 600px) {
+
+    .about-header h1 {
+        font-size: 27px;
+    }
+
+    .about-header p {
+        font-size: 14px;
+    }
+
+    .about-container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .about-section h2,
+    .services-section h2 {
+        font-size: 24px;
+    }
+
+    .about-section p {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .services-section {
+        padding: 12px;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    } 
+
+    .service-card {
+        padding: 15px 12px;
+    }
+
+}
+            </style>
+</head>
+<body> 
+
+    <!-- HEADER -->
+    <header class="about-header">
+        <h1>A & S REAL ESTATE</h1>
+        <p>Affordable Lands, Comfortable Living</p>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="about-container">
+
+        <!-- ABOUT US -->
+        <section class="about-section">
+            <h2>About Us</h2>
+
+            <p>
+                A & S Real Estate is a trusted real estate company
+                dedicated to helping individuals, families, and investors
+                find the perfect property. We specialize in property sales,
+                leasing, management, and consultation.
+            </p>
+
+            <p>
+                Our goal is to make property ownership simple,
+                affordable, and secure. We are committed to providing
+                quality properties, excellent customer service,
+                transparency, and professional guidance to every client.
+            </p>
+        </section>
+
+
+        <!-- OUR VISION -->
+        <section class="about-section">
+            <h2>Our Vision</h2>
+
+            <p>
+                To become a leading and highly trusted real estate
+                company known for providing affordable, secure,
+                and high-quality properties.
+            </p>
+
+            <p>
+                We aspire to help individuals, families, and businesses
+                achieve their property goals while building lasting
+                relationships through trust, honesty, and excellence.
+            </p>
+        </section>
+
+
+        <!-- OUR MISSION -->
+        <section class="about-section">
+            <h2>Our Mission</h2>
+
+            <p>
+                Our mission is to provide reliable real estate solutions
+                by helping clients acquire genuine lands, beautiful homes,
+                apartments, and profitable investment properties
+                at affordable prices.
+            </p>
+
+            <p>
+                We are committed to transparency, customer satisfaction,
+                innovation, and professional service while helping our
+                clients achieve their dreams of property ownership
+                and financial growth.
+            </p>
+        </section>
+
+
+        <!-- OUR SERVICES -->
+        <section class="services-section">
+
+            <h2>Our Services</h2>
+
+            <div class="services-container">
+
+                <div class="service-card">
+                    <span class="service-icon">⌂</span>
+                    <h3>Property Sales</h3>
+                    <p>
+                        Buying and selling genuine lands,
+                        residential homes, and commercial properties.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <span class="service-icon">▦</span>
+                    <h3>Property Management</h3>
+                    <p>
+                        Professional property management and
+                        maintenance services for property owners.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <span class="service-icon">◇</span>
+                    <h3>Property Consultation</h3>
+                    <p>
+                        Expert guidance to help clients make
+                        informed real estate decisions.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <span class="service-icon">⌂</span>
+                    <h3>Residential Listings</h3>
+                    <p>
+                        Discover houses, apartments, and other
+                        residential properties suited to your needs.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <span class="service-icon">▤</span>
+                    <h3>Rental & Leasing</h3>
+                    <p>
+                        Find suitable rental properties and
+                        explore leasing opportunities.
+                    </p>
+                </div>
+
+
+                <div class="service-card">
+                    <span class="service-icon">↗</span>
+                    <h3>Land Investments</h3>
+                    <p>
+                        Explore landed property opportunities
+                        for future development and investment.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <a href="index.html" class="back-home">Back To Home</a>
+
+    <!-- FOOTER -->
+    <footer class="about-footer">
+        <p>&copy; 2026 A & S REAL ESTATE. All Rights Reserved.</p>
+        <p>Affordable Lands, Comfortable Living.</p>
+    </footer> 
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Properties | A & S Real Estate</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #071b49;
+            --blue: #0756c9;
+            --sky: #12bce8;
+            --white: #ffffff;
+            --light: #f4f8fd;
+            --text: #24344d;
+            --muted: #718096;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button,
+        select,
+        input {
+            font: inherit;
+        }
+
+        button,
+        select {
+            cursor: pointer;
+        }
+
+        /* HEADER */
+
+        .site-header {
+            background: var(--navy);
+            color: var(--white);
+            padding: 17px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            color: var(--sky);
+            font-size: 21px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 23px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sky);
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 440px;
+            padding: 80px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+
+            background:
+                linear-gradient(
+                    rgba(3, 19, 53, 0.70),
+                    rgba(3, 19, 53, 0.72)
+                ),
+                url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero-label {
+            color: var(--sky);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--sky);
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 27px;
+            color: #edf5ff;
+            font-size: 14px;
+        }
+
+        .primary-button {
+            display: inline-block;
+            padding: 13px 27px;
+            background: var(--blue);
+            color: var(--white);
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            border: none;
+            transition: 0.25s;
+        }
+
+        .primary-button:hover {
+            background: var(--sky);
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        /* SEARCH FILTERS */
+
+        .search-section {
+            padding: 45px 6%;
+            background: var(--light);
+        }
+
+        .search-box {
+            max-width: 1200px;
+            margin: auto;
+            background: var(--white);
+            padding: 28px;
+            border-radius: 13px;
+            box-shadow: 0 8px 30px rgba(7, 27, 73, 0.07);
+        }
+
+        .search-box h2 {
+            font-size: 21px;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        .filter-group select {
+            width: 100%;
+            min-height: 48px;
+            padding: 10px;
+            border: 1px solid #dbe4ef;
+            border-radius: 7px;
+            background: var(--white);
+            color: var(--text);
+            outline: none;
+        }
+
+        .filter-group select:focus {
+            border-color: var(--blue);
+        }
+
+        .filter-actions {
+            margin-top: 19px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .reset-button {
+            background: transparent;
+            border: none;
+            color: var(--blue);
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .reset-button:hover {
+            text-decoration: underline;
+        }
+
+        .filter-note {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        /* PROPERTY INTRODUCTION */
+
+        .listings-section {
+            padding: 70px 6%;
+            background: var(--white);
+        }
+
+        .section-heading {
+            max-width: 1200px;
+            margin: 0 auto 30px;
+        }
+
+        .eyebrow {
+            color: var(--blue);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 9px;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(25px, 4vw, 37px);
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 760px;
+        }
+
+        .results-count {
+            margin-top: 18px;
+            color: var(--blue);
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* PROPERTY CARDS */
+
+        .property-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .property-card {
+            min-width: 0;
+            overflow: hidden;
+            background: var(--white);
+            border: 1px solid #e6edf5;
+            border-radius: 12px;
+            box-shadow: 0 6px 23px rgba(7, 27, 73, 0.07);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 32px rgba(7, 27, 73, 0.13);
+        }
+
+        .property-image-wrap {
+            height: 205px;
+            position: relative;
+            overflow: hidden;
+            background: #e6edf5;
+        }
+
+        .property-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .property-card:hover .property-image {
+            transform: scale(1.04);
+        }
+
+        .purpose-badge {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            padding: 6px 11px;
+            border-radius: 5px;
+            color: var(--white);
+            background: var(--blue);
+            font-size: 10px;
+            font-weight: 700;
+        }
+
+        .property-details {
+            padding: 20px;
+        }
+
+        .property-details h3 {
+            color: var(--navy);
+            font-size: 17px;
+            line-height: 1.4;
+            margin-bottom: 9px;
+        }
+
+        .property-location {
+            color: var(--muted);
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .property-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #edf1f6;
+            color: #52637a;
+            font-size: 11px;
+        }
+
+        .property-type-label {
+            margin-top: 13px;
+            color: var(--text);
+            font-size: 12px;
+        }
+
+        .property-price {
+            margin: 7px 0 17px;
+            color: var(--blue);
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .property-button {
+            width: 100%;
+            display: block;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: var(--navy);
+            color: var(--white);
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .property-button:hover {
+            background: var(--blue);
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            padding: 40px 20px;
+            text-align: center;
+            background: var(--light);
+            border-radius: 10px;
+            color: var(--muted);
+        }
+
+        /* ENQUIRY DIALOG */
+
+        .enquiry-dialog {
+            width: min(550px, calc(100% - 30px));
+            max-height: 85vh;
+            overflow-y: auto;
+            margin: auto;
+            padding: 28px;
+            border: none;
+            border-radius: 14px;
+            color: var(--text);
+            box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+        }
+
+        .enquiry-dialog::backdrop {
+            background: rgba(3, 15, 39, 0.75);
+        }
+
+        .dialog-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 17px;
+        }
+
+        .dialog-top h2 {
+            color: var(--navy);
+            font-size: 23px;
+            line-height: 1.4;
+        }
+
+        .close-dialog {
+            border: none;
+            background: #edf3fa;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            flex-shrink: 0;
+            font-size: 20px;
+            color: var(--navy);
+        }
+
+        .dialog-location {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .dialog-price {
+            color: var(--blue);
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .amenities-title {
+            color: var(--navy);
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .amenities-list {
+            padding-left: 20px;
+            margin-bottom: 22px;
+            color: #53647a;
+            font-size: 13px;
+        }
+
+        .amenities-list li {
+            margin-bottom: 8px;
+        }
+
+        .dialog-disclaimer {
+            color: var(--muted);
+            font-size: 11px;
+            margin: 15px 0;
+        }
+
+        .dialog-contact {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 6px;
+            background: var(--blue);
+            color: white;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* BACK HOME AND FOOTER */
+
+        .back-home-container {
+            text-align: center;
+            padding: 0 20px 65px;
+        }
+
+        .back-home-button {
+            display: inline-block;
+            background: var(--blue);
+            color: var(--white);
+            padding: 13px 30px;
+            border-radius: 7px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        .back-home-button:hover {
+            background: var(--navy);
+        }
+
+        .site-footer {
+            background: var(--navy);
+            color: var(--white);
+            padding: 25px 6%;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .site-footer span {
+            color: var(--sky);
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media (max-width: 900px) {
+            .property-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .nav-links {
+                gap: 13px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .site-header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 380px;
+                padding: 60px 6%;
+            }
+
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .search-box {
+                padding: 20px;
+            }
+
+            .property-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-image-wrap {
+                height: 220px;
+            }
+
+            .listings-section {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="site-header">
+        <a href="Home.html" class="logo">A & S REAL ESTATE</a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-label">A & S REAL ESTATE</h1>
+
+            <h2>
+                Discover Your Perfect
+                <span>Property</span>
+            </h2>
+
+            <p>
+                Explore luxury apartments, elegant duplexes and beautiful
+                family residences across Lagos Mainland and Island.
+                Your next property search starts here.
+            </p>
+
+            <a href="#property-search" class="primary-button">
+                Explore Properties
+            </a>
+        </div>
+    </section>
+
+    <!-- SEARCH FILTERS -->
+    <section class="search-section" id="property-search">
+        <div class="search-box">
+
+            <h2>Find a Place That Feels Like Home</h2>
+
+            <div class="filters">
+
+                <div class="filter-group">
+                    <label for="purposeFilter">Property Purpose</label>
+
+                    <select id="purposeFilter">
+                        <option value="all">All Purposes</option>
+                        <option value="buy">Buying</option>
+                        <option value="sale">For Sale</option>
+                        <option value="rent">For Rent</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="typeFilter">Property Type</label>
+
+                    <select id="typeFilter">
+                        <option value="all">All Property Types</option>
+                        <option value="apartment">Apartments</option>
+                        <option value="duplex">Duplexes</option>
+                        <option value="house">Houses</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="locationFilter">Property Location</label>
+
+                    <select id="locationFilter">
+                        <option value="all">All Locations</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="filter-actions">
+                <button type="button" class="reset-button" id="resetFilters">
+                    Reset Filters
+                </button>
+
+                <p class="filter-note">
+                    Browse sample listings by purpose, property type and location.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROPERTY LISTINGS -->
+    <section class="listings-section" id="property-listings">
+
+        <div class="section-heading">
+            <p class="eyebrow">EXPLORE OUR COLLECTION</p>
+
+            <h2>Explore Properties Across Lagos</h2>
+
+            <p>
+                Whether you are buying, selling or renting, discover apartments,
+                duplexes and houses in different Lagos locations.
+                Select a property to learn more about its features.
+            </p>
+
+            <p class="results-count" id="resultsCount" aria-live="polite">
+                Loading properties...
+            </p>
+        </div>
+
+        <!-- JavaScript places all property cards inside this container -->
+        <div class="property-grid" id="propertyContainer"></div>
+
+    </section>
+
+    <!-- BACK HOME -->
+    <div class="back-home-container">
+        <a href="index.html" class="back-home">
+            Back To Home</a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>
+            &copy; 2026 <span>A & S REAL ESTATE</span>.
+            All Rights Reserved.
+        </p>
+    </footer>
+
+    <!-- PROPERTY ENQUIRY DIALOG -->
+    <dialog class="enquiry-dialog" id="enquiryDialog">
+
+        <div class="dialog-top">
+            <h2 id="dialogTitle">Property Details</h2>
+
+            <button
+                type="button"
+                class="close-dialog"
+                id="closeDialog"
+                aria-label="Close property details"
+            >&times;</button>
+        </div>
+
+        <p class="dialog-location" id="dialogLocation"></p>
+
+        <p class="dialog-price" id="dialogPrice"></p>
+
+        <h3 class="amenities-title">Property Features & Amenities</h3>
+
+        <ul class="amenities-list" id="amenitiesList"></ul>
+
+        <p class="dialog-disclaimer">
+            These are sample property details. Confirm the actual facilities,
+            availability and price with A & S Real Estate before making a decision.
+        </p>
+
+        <a href="Contactus.html" class="dialog-contact">
+            Continue to Contact Us
+        </a>
+
+    </dialog>
+
+    <!-- LINK TO THE SEPARATE JAVASCRIPT FILE -->
+    <script src="properties.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+</head>
+<body>
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #1a1a2e;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3a5fc8;
+            margin-bottom: 8px;
+        } n
+
+        .subtitle {
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 90%;
+            max-width: 350px;
+            padding: 11px;
+            margin: 8px auto;
+            display: block;
+            border: 1.5px solid #c5d0f5;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 15px;
+            background-color: #f8faff;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3a5fc8;
+            background-color: #ffffff;
+        }
+
+        .btn {
+            background-color: #3a5fc8;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 25px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2f4eb0;
+        }
+
+        .login-link {
+            margin-top: 25px;
+            display: block;
+        }
+
+        .login-link a {
+            color: #3a5fc8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            display: block;
+            margin-top: 40px;
+            color: #3a5fc8;
+            text-decoration: none;
+        }
+
+        .back-home:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sign Up</h1>
+    <p class="subtitle">Create your A & S REAL ESTATE account</p>
+
+    <form action="#" method="post">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Username" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Password" required>
+
+        <label for="confirm">Confirm Password:</label>
+        <input type="password" id="confirm" name="confirm" placeholder="Confirm Password" required>
+
+        <button type="submit" class="btn">Create Account</button>
+    </form>
+
+    <p class="login-link">
+        Already have an account? <a href="login.html">Login</a>
+    </p>
+
+    <a href="index.html" class="back-home">Back To Home</a>
+
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Contact Us </title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --navy: #071b3a;
+            --royal: #155eef;
+            --sky: #7dd3fc;
+            --pale: #eff8ff;
+            --white: #ffffff;
+            --text: #1e293b;
+            --muted: #64748b;
+            --border: #d6e3f0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: var(--text);
+            background: linear-gradient(135deg, #eff8ff, #ffffff, #eaf2ff);
+            line-height: 1.6;
+        }
+
+        .site-header {
+            background: var(--navy);
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 18px;
+        }
+
+        .brand {
+            color: white;
+            font-size: 1.15rem;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .brand span {
+            color: var(--sky);
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .nav-links a {
+            color: white;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--sky);
+        }
+
+        .hero {
+            padding: 55px 20px;
+            text-align: center;
+            color: white;
+            background: linear-gradient(125deg, var(--navy), #1746a2, var(--royal));
+        }
+
+        .hero .eyebrow {
+            color: var(--sky);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin: 10px 0;
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: #e5efff;
+        }
+
+        .page-wrap {
+            width: min(100% - 32px, 1000px);
+            margin: 38px auto 60px;
+        }
+
+        .form-card,
+        .contact-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(7, 27, 58, 0.08);
+        }
+
+        .form-card {
+            padding: clamp(20px, 4vw, 38px);
+        }
+
+        .section-title {
+            color: var(--navy);
+            font-size: 1.35rem;
+            margin: 0 0 5px;
+        }
+
+        .section-intro {
+            color: var(--muted);
+            font-size: 0.92rem;
+            margin: 0 0 24px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            min-width: 0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: var(--navy);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        input,
+        select,
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 12px 13px;
+            border: 1px solid #cbd8e6;
+            border-radius: 9px;
+            background: white;
+            color: var(--text);
+            font: inherit;
+            font-size: 0.94rem;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: var(--royal);
+            box-shadow: 0 0 0 3px rgba(21, 94, 239, 0.12);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .subsection {
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid #e6edf5;
+        }
+
+        .feedback-box {
+            min-height: 105px;
+        }
+
+        .consent-area {
+            margin-top: 25px;
+            padding: 16px;
+            border-radius: 12px;
+            background: var(--pale);
+        }
+
+        .consent-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 12px;
+            color: #334155;
+            font-size: 0.87rem;
+            font-weight: 400;
+        }
+
+        .consent-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .consent-row input[type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            flex: 0 0 17px;
+            margin: 4px 0 0;
+            accent-color: var(--royal);
+        }
+
+        .form-error {
+            color: #b91c1c;
+            font-size: 0.86rem;
+        }
+
+        .form-success {
+            color: #166534;
+            font-size: 0.9rem;
+        }
+
+        .submit-button,
+        .back-button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 10px;
+            font: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 16px;
+            color: white;
+            background: var(--royal);
+        }
+
+        .submit-button:hover:not(:disabled) {
+            background: var(--navy);
+        }
+
+        .submit-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+
+        .contact-options {
+            margin-top: 28px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .contact-options h2 {
+            margin: 0 0 5px;
+            color: var(--navy);
+            font-size: 1.25rem;
+        }
+
+        .contact-options p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-links a {
+            padding: 9px 13px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            background: #f8fbff;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: 0.86rem;
+        }
+
+        .contact-links a:hover {
+            background: var(--pale);
+            border-color: var(--royal);
+        }
+
+        .back-home-wrap {
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .back-button {
+            color: var(--navy);
+            background: var(--sky);
+        }
+
+        footer {
+            padding: 20px;
+            background: var(--navy);
+            color: #e5efff;
+            text-align: center;
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 650px) {
+            .site-header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .nav-links {
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full-width {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+        <h1>We're here to help</h1> 
+
+        <h3>GET IN TOUCH WITH US</h3>
+
+        <p>
+            Tell us whether you're buying, selling, or renting.
+            A & S REAL ESTATE will be happy to hear from you.
+        </p>
+    </section>
+
+    <main class="page-wrap">
+
+        <section class="form-card">
+
+            <h2 class="section-title"> Contact Us </h2>
+
+            <p class="section-intro">
+                Complete the form below so we can understand your property needs.
+            </p>
+
+            <form id="contactForm">
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="fullName">Full Name *</label>
+                        <input
+                            type="text"
+                            id="fullName"
+                            name="fullName"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address *</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Phone Number *</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            autocomplete="tel"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="enquiryType">Property Enquiry *</label>
+                        <select id="enquiryType" name="enquiryType" required>
+                            <option value="">Select an option</option>
+                            <option value="Buying">Buying a Property</option>
+                            <option value="Selling">Selling a Property</option>
+                            <option value="Renting">Renting a Property</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="location">Preferred Property Location *</label>
+                        <input
+                            type="text"
+                            id="location"
+                            name="location"
+                            placeholder="e.g. Lekki Phase 1"
+                            required
+                        >
+                    </div>
+
+                    <div class="field">
+                        <label for="propertyType">Property Type *</label>
+                        <select id="propertyType" name="propertyType" required>
+                            <option value="">Select a property type</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Duplex">Duplex</option>
+                            <option value="House">House</option>
+                            <option value="Not sure yet">Not sure yet</option>
+                        </select>
+                    </div>
+
+                    <div class="field full-width">
+                        <label for="message">Property Enquiry Message *</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about the property you need..."
+                            required
+                        ></textarea>
+                    </div>
+
+                </div>
+
+                <div class="consent-area">
+
+                    <label class="consent-row" for="contactConsent">
+                        <input
+                            type="checkbox"
+                            id="contactConsent"
+                            name="contactConsent"
+                            required
+                        >
+                        <span>
+                            I consent to A & S REAL ESTATE contacting me
+                            regarding my property enquiry.
+                        </span>
+                    </label>
+
+                    <label class="consent-row" for="marketingConsent">
+                        <input
+                            type="checkbox"
+                            id="marketingConsent"
+                            name="marketingConsent"
+                            value="yes"
+                        >
+                        <span>
+                            I would like to receive newsletters and property
+                            updates from A &S REAL ESTATE.
+                        </span>
+                    </label>
+
+                </div>
+
+                <p id="formStatus" role="status" aria-live="polite"></p>
+
+                <button
+                    type="submit"
+                    id="submitButton"
+                    class="submit-button"
+                    disabled
+                >
+                    Submit Enquiry
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="contact-card contact-options">
+
+            <h2>Other Ways to Contact Us</h2>
+
+            <p>Choose a contact method to reach A & S REAL ESTATE.</p>
+
+            <!-- Replace these placeholders with your actual contact details. -->
+            <div class="contact-links">
+                
+                <a href="#" data-placeholder-link="true">Email Us</a>
+                <a href="#" data-placeholder-link="true">WhatsApp</a>
+                <a href="#" data-placeholder-link="true">TikTok</a>
+                <a href="#" data-placeholder-link="true">Instagram</a>
+        
+            </div>
+
+        </section>
+
+        <div class="back-home-wrap">
+            <a class="back-button" href="index2.html"> Back To Home</a>
+        </div>
+
+    </main> 
+
+    <footer>
+        <p>& 2026 A & S REAL ESTATE. All rights reserved.</p>
+    </footer>
+
+    <!-- This connects the separate JavaScript file. -->
+    <script src="Contactus.js" defer></script>
+
+</body>
+</html>
